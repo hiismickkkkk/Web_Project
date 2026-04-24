@@ -19,7 +19,14 @@
     <div class="page">
         <header class="top-bar">
             <div class="logo-title">
+                <img src="{{ url_for('static', filename='ncu_logo.png') }}" alt="NCU Logo" class="school-logo">
                 <h1>國立中央大學無障礙地圖 (NCU Barrier-Free Map)</h1>
+            </div>
+
+            <div class="header-right-btns">
+                <button class="header-btn" id="reportBtn">問題回報</button>
+                <button class="header-btn" id="infoBtn">說明</button>
+            </div>
             </div>
         </header>
 
