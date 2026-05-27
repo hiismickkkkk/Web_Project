@@ -259,6 +259,7 @@ body {
     flex: 1;
     height: 100%;
     z-index: 1;
+    transition: all 0.3s ease;
 }
 
 /* ───────── Floating Action Buttons ───────── */
@@ -322,6 +323,9 @@ body {
     overflow-y: auto;
     flex-shrink: 0;
     z-index: 100;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1000;
 }
 
 .sidebar-title {
@@ -338,6 +342,68 @@ body {
     gap: 7px;
 }
 
+/* ══════════════════════════════════════════════════
+   追加：側邊欄收縮專用樣式（融合你原本的設計）
+   ══════════════════════════════════════════════════ */
+
+/* 1. 當側邊欄收起時，將寬度與寬度上限強制歸零 */
+.sidebar.collapsed {
+    width: 0 !important;
+    min-width: 0 !important;
+    flex-basis: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: visible !important; /* 關鍵：允許裡面的收縮按鈕露出來 */
+}
+
+/* 2. 當收縮時，隱藏側邊欄內部的原本內容物，防止文字在寬度變小時擠壓變形 */
+.sidebar.collapsed > *:not(.toggle-sidebar-btn) {
+    display: none !important;
+}
+
+/* 3. 調整你原本的標題區塊，加入 flex 佈局讓按鈕可以漂亮地靠右對齊 */
+.sidebar-title {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100%;
+}
+
+/* 4. 收縮按鈕的基本樣式（融合你的 var(--muted) 顏色） */
+.toggle-sidebar-btn {
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 14px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-sidebar-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--purple); /* 懸浮時變成你的主色調紫 */
+}
+
+/* 5. 關鍵：當側邊欄完全收起（width: 0）時，按鈕要單獨「跳脫懸浮」在地圖右上角 */
+.sidebar.collapsed .toggle-sidebar-btn {
+    position: absolute;
+    right: 20px;       /* 距離螢幕最右側 20px */
+    top: 15px;        /* 距離 Header 下方 15px */
+    background: var(--surface); /* 使用你原本的白底背景色 */
+    box-shadow: 0 2px 8px rgba(0,0,0,.15); /* 給它一個小陰影，看起來像懸浮按鈕 */
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    z-index: 1001;     /* 確保在 Leaflet 地圖圖層的上面 */
+    border: 1px solid var(--border);
+}
 .sidebar-title i { color: var(--purple); }
 
 /* Category Buttons */
@@ -1019,4 +1085,83 @@ body {
 
 @media (max-width: 500px) {
     .header-center { display: none; }
+}
+
+/* ═══ 手風琴列表═══ */
+.category-item {
+    margin-bottom: 12px;
+    width: 100%;
+}
+.cat-btn {
+    width: 100% !important;
+}
+.region-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #fdfdff;
+    border-radius: 0 0 16px 16px;
+    margin-top: -10px;
+    border: 1px solid transparent;
+    border-top: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 展開狀態 */
+.region-panel.open {
+    max-height: 260px;
+    overflow-y: auto;
+    border-color: var(--border);
+    padding: 18px 12px 10px 12px;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.category-item:has(.region-panel.open) .cat-btn {
+    border-radius: 16px 16px 0 0 !important;
+    box-shadow: none !important;
+}
+
+.region-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.region-list li {
+    padding: 10px 12px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    background: transparent;
+    display: flex;
+    align-items: flex-start;
+}
+
+.region-list li::before {
+    content: "📍";
+    margin-right: 8px;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.region-list li:hover {
+    background: var(--surface);
+    padding-left: 18px;
+}
+
+.region-item-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    text-align: left;
+}
+
+.region-item-desc {
+    font-size: 11px;
+    color: #777;
+    margin-top: 3px;
+    line-height: 1.4;
+    text-align: left; 
 }

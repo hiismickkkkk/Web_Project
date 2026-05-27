@@ -36,7 +36,7 @@ const rainOverlay = L.layerGroup();
 L.control.layers(
     { '街道地圖': tileOSM, '衛星俯瞰': tileSat },
     { '天氣動畫': rainOverlay },
-    { position: 'topright' }
+    { position: 'topleft' }
 ).addTo(map);
 
 map.on('overlayadd', async e => {
@@ -579,3 +579,86 @@ function stopCloudLayer() {
 
 // ───────── Initialize ─────────
 buildMarkers();
+
+// ═══ 側邊欄收縮功能 JS ═══
+function toggleSidebar() {
+    const sidebar = document.getElementById('app-sidebar');
+    const icon = document.getElementById('sidebar-icon');
+    const btn = sidebar.querySelector('.toggle-sidebar-btn');
+    
+    sidebar.classList.toggle('collapsed');
+    
+    if (sidebar.classList.contains('collapsed')) {
+        icon.className = 'fas fa-chevron-left';
+        btn.title = '展開側邊欄';
+        sidebar.appendChild(btn); 
+    } else {
+        icon.className = 'fas fa-chevron-right';
+        btn.title = '收起側邊欄';
+        const titleDiv = sidebar.querySelector('.sidebar-title');
+        titleDiv.appendChild(btn);
+    }
+    
+    if (typeof map !== 'undefined' && map !== null) {
+        let count = 0;
+        const interval = setInterval(() => {
+            map.invalidateSize();
+            count++;
+            if (count > 30) clearInterval(interval);
+        }, 10);
+    }
+}
+
+// ═══ 展開內部資訊 ═══
+function populateRegionLists() {
+    Object.entries(DATA).forEach(([type, info]) => {
+        const ulElement = document.getElementById(`list-${type}`);
+        if (!ulElement) return;
+
+        ulElement.innerHTML = info.items.map(item => {
+            const descText = item.desc || info.defaultDesc || '';
+            return `
+                <li onclick="focusOnLocation(${item.coords[0]}, ${item.coords[1]}, event)">
+                    <div>
+                        <div class="region-item-name">${item.name}</div>
+                        <div class="region-item-desc">${descText}</div>
+                    </div>
+                </li>
+            `;
+        }).join('');
+    });
+}
+
+function handleCategoryClick(type) {
+    const currentPanel = document.getElementById(`panel-${type}`);
+    if (currentPanel) {
+        currentPanel.classList.toggle('open');
+    }
+}
+
+function handleEyeClick(type, event) {
+    if (event) {
+        event.stopPropagation();
+        event.preventDefault();
+    }
+    if (typeof toggleLayer === 'function') {
+        toggleLayer(type);
+    }
+}
+
+function focusOnLocation(lat, lng, event) {
+    if (event) event.stopPropagation();
+    
+    if (typeof map !== 'undefined' && map !== null) {
+        map.flyTo([lat, lng], 18, {
+            animate: true,
+            duration: 0.8
+        });
+        
+        if (window.innerWidth < 768 && typeof toggleSidebar === 'function') {
+            toggleSidebar();
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', populateRegionLists);
