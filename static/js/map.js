@@ -74,11 +74,11 @@ const DATA = {
         icon:  'fa-heart-pulse',
         label: 'AED 體外除顫器',
         items: [
-            { name: '衛生保健組',   coords: [24.96819, 121.19342], desc: '行政大樓一樓，衛生保健組服務台旁' },
-            { name: '行政大樓',     coords: [24.96826, 121.19510], desc: '行政大樓一樓正門入口處' },
-            { name: '女十四舍',     coords: [24.96562, 121.19438], desc: '宿舍一樓舍監室旁' },
-            { name: '綜教館',       coords: [24.97021, 121.19300], desc: '綜合教學館一樓中庭牆面' },
-            { name: '依仁堂',       coords: [24.96826, 121.19103], desc: '體育館（依仁堂）主入口' }
+            { name: '衛生保健組',  name_en: "Health Center", coords: [24.96819, 121.19342], desc: '行政大樓一樓，衛生保健組服務台旁', desc_en: "1st Floor of Administration Building, next to the Health Center service desk"},
+            { name: '行政大樓',  name_en: "Administration Building", coords: [24.96826, 121.19510], desc: '行政大樓一樓正門入口處', desc_en: "1st Floor of Administration Building, at the main entrance" },
+            { name: '女十四舍',  name_en: "Female Dorm #14", coords: [24.96562, 121.19438], desc: '宿舍一樓舍監室旁', desc_en: "1st Floor of the dormitory, next to the housemaster office" },
+            { name: '綜教館',  name_en: "General Education Building", coords: [24.97021, 121.19300], desc: '綜合教學館一樓中庭牆面', desc_en: "1st Floor courtyard wall of General Education Building" },
+            { name: '依仁堂', name_en: "Yi-Reng Hall", coords: [24.96826, 121.19103], desc: '體育館（依仁堂）主入口', desc_en: "Next to Yi-Reng Hall entrance" }
         ]
     },
     sos: {
@@ -86,16 +86,16 @@ const DATA = {
         icon:  'fa-phone-volume',
         label: 'SOS 緊急電話',
         items: [
-            { name: '綜教館',           coords: [24.97021, 121.19280], desc: 'SOS 緊急求救電話' },
-            { name: '至道樓',           coords: [24.96563, 121.19378], desc: 'SOS 緊急求救電話' },
-            { name: '校史館前',         coords: [24.96700, 121.19576], desc: 'SOS 緊急求救電話' },
-            { name: '國鼎大樓前',       coords: [24.96992, 121.19098], desc: 'SOS 緊急求救電話' },
-            { name: '羽球場',           coords: [24.96901, 121.19104], desc: 'SOS 緊急求救電話' },
-            { name: '小榕樹排球場',     coords: [24.96744, 121.19087], desc: 'SOS 緊急求救電話' },
-            { name: '後門',             coords: [24.96567, 121.19104], desc: 'SOS 緊急求救電話' },
-            { name: '籃球場',           coords: [24.96848, 121.18922], desc: 'SOS 緊急求救電話' },
-            { name: '大型力學實驗館',   coords: [24.96872, 121.18854], desc: 'SOS 緊急求救電話' },
-            { name: '運動中心',         coords: [24.96973, 121.18989], desc: 'SOS 緊急求救電話' }
+            { name: '綜教館',  name_en: "General Education Building", coords: [24.97021, 121.19280], desc: 'SOS 緊急求救電話', desc_en: "SOS Emergency Phone" },
+            { name: '至道樓',  name_en: "Zhi-Dao Hall", coords: [24.96563, 121.19378], desc: 'SOS 緊急求救電話', desc_en: "SOS Emergency Phone" },
+            { name: '校史館前',  name_en: "In front of Grand Lecture Hall", coords: [24.96700, 121.19576], desc: 'SOS 緊急求救電話', desc_en: "SOS Emergency Phone" },
+            { name: '國鼎大樓前',  name_en: "In front of Kwoh-Ting Optics and Photonics Building", coords: [24.96992, 121.19098], desc: 'SOS 緊急求救電話', desc_en: "SOS Emergency Phone" },
+            { name: '羽球場',  name_en: "Badminton Court", coords: [24.96901, 121.19104], desc: 'SOS 緊急求救電話', desc_en: "SOS Emergency Phone" },
+            { name: '小榕樹排球場',  name_en: "Volleyball Court", coords: [24.96744, 121.19087], desc: 'SOS 緊急求救電話', desc_en: "SOS Emergency Phone" },
+            { name: '後門',  name_en: "Back Gate", coords: [24.96567, 121.19104], desc: 'SOS 緊急求救電話', desc_en: "SOS Emergency Phone" },
+            { name: '籃球場',  name_en: "Basketball Court", coords: [24.96848, 121.18922], desc: 'SOS 緊急求救電話', desc_en: "SOS Emergency Phone" },
+            { name: '大型力學實驗館',  name_en: "Experimental Center of Civil Engineering", coords: [24.96872, 121.18854], desc: 'SOS 緊急求救電話', desc_en: "SOS Emergency Phone" },
+            { name: '運動中心',  name_en: "Sports Center", coords: [24.96973, 121.18989], desc: 'SOS 緊急求救電話', desc_en: "SOS Emergency Phone" }
         ]
     },
     ramp: {
@@ -103,12 +103,12 @@ const DATA = {
         icon:  'fa-person-walking',
         label: '無障礙坡道',
         items: [
-            { name: '無障礙坡道 — 行政大樓北側', coords: [24.96840, 121.19505], desc: '連接停車場與行政大樓入口，坡度平緩，設有止滑條' },
-            { name: '無障礙坡道 — 圖書館正門',   coords: [24.96878, 121.19265], desc: '圖書館主入口兩側均設有無障礙坡道' },
-            { name: '無障礙坡道 — 理學院',       coords: [24.96650, 121.19398], desc: '理學院大樓主入口坡道，寬度 150 cm' },
-            { name: '無障礙坡道 — 工學院廣場',   coords: [24.96698, 121.19522], desc: '工學院廣場連接各教室走道之坡道' },
-            { name: '無障礙坡道 — 學生活動中心', coords: [24.96918, 121.19345], desc: '學生活動中心側門坡道' },
-            { name: '無障礙坡道 — 依仁堂（體育館）', coords: [24.96898, 121.19050], desc: '體育館主入口無障礙坡道，寬度充裕' }
+            { name: '無障礙坡道 — 行政大樓北側', name_en: 'Accessible Ramp — North Side of Administration Building', coords: [24.96840, 121.19505], desc: '連接停車場與行政大樓入口，坡度平緩，設有止滑條', desc_en: 'Connecting the parking lot and the Administration Building entrance; gentle slope with anti-slip strips.'},
+            { name: '無障礙坡道 — 圖書館正門',   name_en: 'Accessible Ramp — Main Entrance of Main Library', coords: [24.96878, 121.19265], desc: '圖書館主入口兩側均設有無障礙坡道', desc_en: 'Accessible ramp on both sides of the library main entrance.' },
+            { name: '無障礙坡道 — 理學院',       name_en: 'Accessible Ramp — College of Science', coords: [24.96650, 121.19398], desc: '理學院主入口坡道，寬度 150 cm', desc_en: 'Main entrance ramp of the College of Science, width 150 cm.' },
+            { name: '無障礙坡道 — 工學院廣場',   name_en: 'Accessible Ramp — Engineering College Plaza', coords: [24.96698, 121.19522], desc: '工學院廣場連接各教室走道之坡道', desc_en: 'Ramp connecting the Engineering College Plaza to various classroom walkways.' },
+            { name: '無障礙坡道 — 學生活動中心', name_en: 'Accessible Ramp — Student Activities Center', coords: [24.96918, 121.19345], desc: '學生活動中心側門坡道', desc_en: 'Accessible ramp at the side entrance of the Student Activities Center.' },
+            { name: '無障礙坡道 — 依仁堂（體育館）', name_en: 'Accessible Ramp — Yi-Reng Hall', coords: [24.96898, 121.19050], desc: '體育館主入口無障礙坡道，寬度充裕', desc_en: 'Main entrance accessible ramp of the Yi-Reng Hall, with ample width.' }
         ]
     },
     elevator: {
@@ -116,16 +116,120 @@ const DATA = {
         icon:  'fa-elevator',
         label: '無障礙電梯',
         items: [
-            { name: '無障礙電梯 — 行政大樓',   coords: [24.96832, 121.19518], desc: '可達 1–6 樓，位於大樓東側走廊' },
-            { name: '無障礙電梯 — 圖書館',     coords: [24.96875, 121.19258], desc: '可達 B1–5 樓，位於入口大廳右側' },
-            { name: '無障礙電梯 — 理學院',     coords: [24.96655, 121.19405], desc: '可達 1–8 樓，位於理學院中央走廊' },
-            { name: '無障礙電梯 — 工學院一館', coords: [24.96703, 121.19530], desc: '可達 1–6 樓，位於一館北棟入口旁' },
-            { name: '無障礙電梯 — 綜教館',     coords: [24.97015, 121.19308], desc: '可達 1–5 樓，位於綜教館西側電梯廳' },
-            { name: '無障礙電梯 — 女十四舍',   coords: [24.96565, 121.19445], desc: '可達 1–8 樓，宿舍一樓大廳旁' }
+            { name: '無障礙電梯 — 行政大樓',   name_en: 'Accessible Elevator — Administration Building', coords: [24.96832, 121.19518], desc: '可達 1–6 樓，位於大樓東側走廊', desc_en: 'Accessible to floors 1–6, located in the east corridor of the building.' },
+            { name: '無障礙電梯 — 圖書館',     name_en: 'Accessible Elevator — Main Library', coords: [24.96875, 121.19258], desc: '可達 B1–5 樓，位於入口大廳右側', desc_en: 'Accessible to floors B1–5, located in the right side of the library entrance hall.' },
+            { name: '無障礙電梯 — 理學院',     name_en: 'Accessible Elevator — College of Science', coords: [24.96655, 121.19405], desc: '可達 1–8 樓，位於理學院中央走廊', desc_en: 'Accessible to floors 1–8, located in the central corridor of the College of Science.' },
+            { name: '無障礙電梯 — 工學院一館', name_en: 'Accessible Elevator — Engineering College Building ＃1', coords: [24.96703, 121.19530], desc: '可達 1–6 樓，位於一館北棟入口旁', desc_en: 'Accessible to floors 1–6, located near the northern entrance of the Engineering College Building.' },
+            { name: '無障礙電梯 — 綜教館',     name_en: 'Accessible Elevator — General Education Building', coords: [24.97015, 121.19308], desc: '可達 1–5 樓，位於綜教館西側電梯廳', desc_en: 'Accessible to floors 1–5, located in the western elevator lobby of the General Education Building.' },
+            { name: '無障礙電梯 — 女十四舍',   name_en: 'Accessible Elevator — Female Dorm #14', coords: [24.96565, 121.19445], desc: '可達 1–8 樓，宿舍一樓大廳旁', desc_en: 'Accessible to floors 1–8, located next to the first-floor lobby of Female Dorm #14.' }
         ]
     }
 };
+// ───────── language change system ─────────
+// ───────── 新增：多國語言設定 (i18n) ─────────
+let currentLang = 'zh'; // 預設語言
+const translations = {
+    'zh': {
+        'NCU': '國立中央大學 無障礙地圖',
+        'title_main': '無障礙地圖',
+        'title_sub': '國立中央大學',
+        'btn_report_text': '問題回報',
+        'btn_info_text': '說明',
+        'cat_aed': 'AED 體外除顫器',
+        'cat_sos': 'SOS 緊急電話',
+        'cat_ramp': '無障礙坡道',
+        'cat_elevator': '無障礙電梯',
+        'loc_text': '已定位您的位置',
+        'facility_type': '設施類型',
+        'report': '問題回報',
+        'report_hint': '發現地圖資訊有誤或設施有問題？請填寫下方表單，我們將盡快處理。',
+        'report_issue_type': '問題類型',
+        'report_issue_type_placeholder': '請選擇問題類型',
+        'report_issue_type_wrong_location': '位置資訊錯誤',
+        'report_issue_type_broken': '設施損壞',
+        'report_issue_type_missing': '缺少設施資訊',
+        'report_issue_type_other': '其他',
+        'report_description': '問題描述',
+        'report_email': '聯絡信箱',
+        'report_cancel': '取消',
+        'report_submit': '送出回報',
+        'report_description_placeholder': '請詳細描述您發現的問題...',
+        'issue_desc': '問題描述',
+        'optional': '（選填）',
+        'info_title': '使用說明',
+        'current_location': '目前位置',
+        'info_loc_p1': '點擊地圖左下角的',
+        'locating_button': '定位按鈕',
+        'info_loc_p2': '顯示您的目前位置',
+        'info_location_success': '定位成功後，地圖自動移至您的位置並顯示藍色脈衝標記',
+        'info_nearby_facilities': '右側面板將顯示各類設施中距離最近的一處',
+        'map_operations': '地圖操作',
+        'info_scroll_zoom': '滑鼠滾輪 / 雙指捏合可縮放地圖',
+        'info_drag_map': '拖曳以移動地圖視角',
+        'info_toggle_map': '右上角可切換衛星圖或街道圖',
+        'info_click_marker': '點擊標記可查看詳細資訊與距離',
+        'filter_facilities': '設施篩選',
+        'info_filter_facilities': '點擊右側設施類型按鈕可顯示或隱藏各類標記',
+        'info_eye_icon': '眼睛圖示代表目前顯示狀態',
+        'search': '搜尋',
+        'info_search': '在上方搜尋欄輸入設施名稱，點擊結果可跳轉至該位置',
+        'legend_aed': 'AED 體外除顫器',
+        'legend_sos': 'SOS 緊急電話',
+        'legend_ramp': '無障礙坡道',
+        'legend_elevator': '無障礙電梯'
+    },
 
+    'en': {
+        'NCU': 'NCU Accessibility Map',
+        'title_main': 'Accessibility Facilities Map',
+        'title_sub': 'National Central University',
+        'btn_report_text': 'Report Issue',
+        'btn_info_text': 'Info',
+        'cat_aed': 'AED Defibrillator',
+        'cat_sos': 'SOS Emergency Phone',
+        'cat_ramp': 'Accessible Ramp',
+        'cat_elevator': 'Accessible Elevator',
+        'loc_text': 'Your location is now displayed',
+        'facility_type': 'Facility Type',
+        'report': 'Report Issue',
+        'report_hint': 'If you find any inaccuracies or have suggestions, please click the button below to report them to us!',
+        'report_issue_type': 'Issue Type',
+        'report_issue_type_placeholder': 'Please select an issue type',
+        'report_issue_type_wrong_location': 'Wrong Location Info',
+        'report_issue_type_broken': 'Broken Facility',
+        'report_issue_type_missing': 'Missing Facility Info',
+        'report_issue_type_other': 'Other',
+        'report_description': 'Issue Description',
+        'report_email': 'Contact Email',
+        'report_cancel': 'Cancel',
+        'report_submit': 'Submit Report',
+        'report_description_placeholder': 'Please describe the issue in detail...',
+        'issue_desc': 'Issue Description',
+        'optional': '(Optional)',
+        'info_title': 'User Guide',
+        'current_location': 'Current Location',
+        'info_loc_p1': 'Click the button at the bottom left of the map',
+        'info_loc_p2': 'to show your current location.',
+        'info_location_success': 'After successful location detection, the map will automatically center on your location and display a blue pulsing marker.',
+        'locating_button': 'Locating Button',
+        'info_nearby_facilities': 'The right panel will display the nearest facility of each type.',
+        'map_operations': 'Map Operations',
+        'info_scroll_zoom': 'Use mouse wheel / pinch to zoom the map.',
+        'info_drag_map': 'Drag to move the map view.',
+        'info_toggle_map': 'The top right corner can switch between satellite and street views.',
+        'info_click_marker': 'Click on markers to view detailed information and distance.',
+        'filter_facilities': 'Facility Filter',
+        'info_filter_facilities': 'Click the facility type button on the right to show or hide markers.',
+        'info_eye_icon': 'The eye icon indicates the current display status.',
+        'search': 'Search',
+        'info_search': 'Enter the facility name in the search bar above and click the result to jump to its location.',
+        'legend_aed': 'AED Defibrillator',
+        'legend_sos': 'SOS Emergency Phone',
+        'legend_ramp': 'Accessible Ramp',
+        'legend_elevator': 'Accessible Elevator'
+    }
+};
+// ───────────────────────────────────────────
 // ───────── Layer Groups & Visibility State ─────────
 const groups  = {};
 const visible = {};
@@ -616,11 +720,13 @@ function populateRegionLists() {
         if (!ulElement) return;
 
         ulElement.innerHTML = info.items.map(item => {
-            const descText = item.desc || info.defaultDesc || '';
+            const nameText = (currentLang === 'en' && item.name_en) ? item.name_en : item.name;
+            const descText = (currentLang === 'en' && item.desc_en) ? item.desc_en : (item.desc || info.defaultDesc || '');
+            
             return `
                 <li onclick="focusOnLocation(${item.coords[0]}, ${item.coords[1]}, event)">
                     <div>
-                        <div class="region-item-name">${item.name}</div>
+                        <div class="region-item-name">${nameText}</div>
                         <div class="region-item-desc">${descText}</div>
                     </div>
                 </li>
@@ -662,3 +768,30 @@ function focusOnLocation(lat, lng, event) {
 }
 
 document.addEventListener('DOMContentLoaded', populateRegionLists);
+
+// ───────── 新增：切換語言核心邏輯 ─────────
+function toggleLanguage() {
+    // 1. 切換語系狀態
+    currentLang = (currentLang === 'zh') ? 'en' : 'zh';
+    
+    // 2. 切換按鈕文字
+    const langBtn = document.getElementById('lang-btn');
+    if (langBtn) langBtn.innerText = (currentLang === 'zh') ? 'English' : '中文';
+
+    // 3. 翻譯網頁中所有帶有 data-i18n 的靜態元素
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[currentLang] && translations[currentLang][key]) {
+            // 保留原本內含的 FontAwesome Icon 圖標
+            const icon = el.querySelector('i');
+            if (icon) {
+                el.innerHTML = `${icon.outerHTML} ${translations[currentLang][key]}`;
+            } else {
+                el.innerText = translations[currentLang][key];
+            }
+        }
+    });
+
+    // 4. 重新刷新左側動態列表資料
+    populateRegionLists();
+}
